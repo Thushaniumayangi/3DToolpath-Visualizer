@@ -3,4 +3,6 @@ numpy
 matplotlib
 imageio
 plotly
-pandas
+time
+tempfile
+plotly
