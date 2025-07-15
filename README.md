@@ -26,3 +26,66 @@ $$LAYER/0.2
 $$LAYER/0.4
 12.0 12.0
 16.0 18.0
+
+---
+
+.cli file parasing logic
+
+---
+-Line by line wil be read by the parser
+- A new layer denotes by $$LAYER/x.x
+-Each line after it is a coordinate pair (x,y)
+-Also it combined with thhe Z-value to form (X,Y,Z) points
+
+---
+
+Heat Source Modeling
+
+---
+
+-Gaussian heat model was used
+exp(-((x - cx)^2 + (y - cy)^2) / (2 * sigma^2))
+-Centered at each toolpath point.
+-Visualized as a heatmap overlay.
+-Sigma controls the spread of heat.
+
+---
+
+GUI Structure
+
+---
+
+-Built with Streamlit
+-Upload .cli file → choose layer → view path and heat
+-Autoplay at different speeds
+-Optional 3D viewer (Plotly)
+-Export tools (Image / Animated GIF)
+-Statistics (layer count, point count)
+
+---
+
+How to run
+
+---
+
+-Clone the repo
+git clone https://github.com/YOUR_USERNAME/3DToolpath-Visualizer.git
+cd 3DToolpath-Visualizer
+
+-Install dependancies
+pip install -r requirements.txt
+
+-Run the app
+streamlit run streamlit_app.py
+
+---
+
+Dependencies
+
+streamlit
+numpy
+matplotlib
+imageio
+plotly
+
+
